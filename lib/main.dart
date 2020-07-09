@@ -17,9 +17,17 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.pink,
       ),
     body: Center(
-      child: Image(
-        image: NetworkImage('https://images.unsplash.com/photo-1594091931427-ceb069262017?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80'),
-        //image: AssetImage(),
+      child: RaisedButton.icon(
+        onPressed:(){
+          print('Clicked');
+        },
+        color: Colors.blue,
+        icon: Icon(
+          Icons.bluetooth_searching,
+          color: Colors.white,
+          size: 40,
+        ),
+        label: Text('Bluetooth'),
         )
     ),
     floatingActionButton: FloatingActionButton(
