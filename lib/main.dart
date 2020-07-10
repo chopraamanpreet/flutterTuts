@@ -16,19 +16,23 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.pink,
       ),
-    body: Center(
-      child: RaisedButton.icon(
-        onPressed:(){
-          print('Clicked');
-        },
-        color: Colors.blue,
-        icon: Icon(
-          Icons.bluetooth_searching,
-          color: Colors.white,
-          size: 40,
+    body: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        Text("This is the text"),
+        Icon(Icons.folder_open),
+        Container(
+          color: Colors.green,
+          padding: EdgeInsets.all(30.0),
+          child: Text("INsisde the Container"),
         ),
-        label: Text('Bluetooth'),
+        FlatButton(
+          onPressed: (){},
+          color: Colors.yellow,
+          child: Text("Click Here"),
         )
+      ],
     ),
     floatingActionButton: FloatingActionButton(
       onPressed: () {},
