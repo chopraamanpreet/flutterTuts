@@ -7,38 +7,29 @@ void main() {
   );
 }
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    List<String> quotes=[
+      "hello",
+      "second",
+      "Third"
+    ];
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Text('My First App'),
+        title: Text("Using lists"),
+        backgroundColor: Colors.redAccent,
         centerTitle: true,
-        backgroundColor: Colors.pink,
       ),
-    body: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        Text("This is the text"),
-        Icon(Icons.folder_open),
-        Container(
-          color: Colors.green,
-          padding: EdgeInsets.all(30.0),
-          child: Text("INsisde the Container"),
-        ),
-        FlatButton(
-          onPressed: (){},
-          color: Colors.yellow,
-          child: Text("Click Here"),
-        )
-      ],
-    ),
-    floatingActionButton: FloatingActionButton(
-      onPressed: () {},
-      child:Text("Click!"),
-      backgroundColor: Colors.pink,
-    ),
+      body: Column(
+        children: quotes.map((quote) => Text(quote)).toList(),
+      ),
     );
   }
 }
